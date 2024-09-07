@@ -1,3 +1,7 @@
+# Ignore output/ directory
+output/
+
+# Ignore vscode files
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -5,42 +9,44 @@
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
-# Local History for Visual Studio Code
+# Rest of the existing rules...
 .history/
-
-# Built Visual Studio Code Extensions
 *.vsix
-
-
-# Prerequisites
 *.d
-
-# Compiled Object files
 *.slo
 *.lo
 *.o
 *.obj
-
-# Precompiled Headers
 *.gch
 *.pch
-
-# Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
 *.mod
 *.smod
-
-# Compiled Static libraries
 *.lai
 *.la
 *.a
 *.lib
-
-# Executables
+# Rest of the existing rules...
+.history/
+*.vsix
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dylib
+*.dll
+*.mod
+*.smod
+*.lai
+*.la
+*.a
+*.lib
 *.exe
 *.out
 *.app
