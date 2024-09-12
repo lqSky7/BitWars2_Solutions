@@ -3,7 +3,14 @@ using namespace std;
 
 
 int main(){
-vector<int> buildings{1,2,3,1,5,18,25,26,24,1,5,23};
+vector<int> buildings{1,2,3,4};
+
+if(buildings.size() == 0){
+    cout<<0<<endl;
+    return 0;
+}
+
+
 
 int max1 =0;
 int cnt = 0;
