@@ -50,6 +50,7 @@ for( const auto& z: buildingIndexTracker){
 for(const auto& z: buildingIndexTracker){
     if(max1 == z.second){
         BuildingIndexTracker_SORTED.insert(std::make_pair(z.first,z.second));
+        buildingIndexTracker.delete
     }
 }
 }
