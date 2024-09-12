@@ -2,41 +2,31 @@
 using namespace std;
 
 int main(){
-vector<int> flwrArr = {1,0,0,0,1,0,0,1};
-int numberofEmptyPlots = flwrArr.size() -accumulate(flwrArr.begin(), flwrArr.end(), 0);
-// cout<< numberofEmptyPlots<<endl; perfect until here
-int numberFlw = 50;
-int exactNumber = numberofEmptyPlots;
+vector<int> flwrArr = {0,0,0,0,1,0,0,0};
+// int numberofEmptyPlots = flwrArr.size() -accumulate(flwrArr.begin(), flwrArr.end(), 0);
 
-// check for all possible cases:
-if(numberofEmptyPlots == 0){
-    if(numberFlw != 0){
-        cout<<"False";
-    }
-    else{
-        cout<<"True";
-    }
+// int numberFlw = 50;
+
+bool safeArr[flwrArr.size()] = {};
+for(int i=0;i<flwrArr.size();i++){
+    safeArr[i] = true;
 }
 
+// for(const auto r: safeArr){
+//     cout<<r<<endl;
+// }
 
-
-//case 2: starting/ending pot is 1
-if(flwrArr[0] == 1 or flwrArr[-1]==1){
-    exactNumber -= 2*flwrArr[0];
-    exactNumber -= 2*flwrArr[-1];
+for(int i = 1;i<flwrArr.size()-1;i++){
+    if(flwrArr[i]==1){safeArr[i-1]=safeArr[i]=safeArr[i+1]=false;}
 }
 
-//case 3: __*__
-for(int i=1;i<flwrArr.size()-2;i++){
-    if(flwrArr[i]==1){
-        if(flwrArr[i-1] == flwrArr[i+1]== 0){exactNumber -= 3;}
-        else{break;}
+int cnt =0;
+for(int i=0;i<flwrArr.size();i++){
+    if(safeArr[i] == true){
+        cnt++;
+        
     }
 }
-//case 4: **
+cout<<cnt<<endl;
 
-// case 5: _*_*_
-
-
-cout<<exactNumber<<endl;
 };
